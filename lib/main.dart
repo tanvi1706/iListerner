@@ -10,6 +10,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -50,55 +52,72 @@ class _MyAppState extends State<MyApp> {
             ],
           ),
         ),
-        drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: <Widget>[
-              ListTile(
-                title: Text(
-                  'Navigate',
-                  style: TextStyle(fontSize: 20),
-                ),
-                onTap: () {},
-              ),
-              ListTile(
-                title: Text(
-                  'Favorite Places',
-                  style: TextStyle(fontSize: 20),
-                ),
-                onTap: () {},
-              ),
-              ListTile(
-                title: Text(
-                  'Emergency Contacts',
-                  style: TextStyle(fontSize: 20),
-                ),
-                onTap: () {},
-              ),
-              ListTile(
-                title: Text(
-                  'Help',
-                  style: TextStyle(fontSize: 20),
-                ),
-                onTap: () {},
-              ),
-              ListTile(
-                title: Text(
-                  'About us',
-                  style: TextStyle(fontSize: 20),
-                ),
-                onTap: () {},
-              ),
-              ListTile(
-                title: Text(
-                  'Settings',
-                  style: TextStyle(fontSize: 20),
-                ),
-                onTap: () {},
-              ),
-            ],
+        drawer: Sidenav(selectedIndex),
+      ),
+    );
+  }
+}
+
+class Sidenav extends StatelessWidget {
+  final int selectedIndex;
+
+  Sidenav(this.selectedIndex);
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: <Widget>[
+          ListTile(
+            title: Text(
+              'Navigate',
+              style: TextStyle(fontSize: 20),
+            ),
+            onTap: () {},
           ),
-        ),
+          Divider(color: Colors.black),
+          ListTile(
+            title: Text(
+              'Favorite Places',
+              style: TextStyle(fontSize: 20),
+            ),
+            onTap: () {},
+          ),
+          Divider(color: Colors.black),
+          ListTile(
+            title: Text(
+              'Emergency Contacts',
+              style: TextStyle(fontSize: 20),
+            ),
+            onTap: () {},
+          ),
+          Divider(color: Colors.black),
+          ListTile(
+            title: Text(
+              'Help',
+              style: TextStyle(fontSize: 20),
+            ),
+            onTap: () {},
+          ),
+          Divider(color: Colors.black),
+          ListTile(
+            title: Text(
+              'About us',
+              style: TextStyle(fontSize: 20),
+            ),
+            onTap: () {},
+          ),
+          Divider(color: Colors.black),
+          ListTile(
+            title: Text(
+              'Settings',
+              style: TextStyle(fontSize: 20),
+            ),
+            onTap: () {},
+          ),
+          Divider(color: Colors.black),
+        ],
       ),
     );
   }
