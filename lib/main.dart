@@ -3,9 +3,9 @@ import 'apphome.dart';
 import 'AboutUs.dart';
 import 'ConnectedDevices.dart';
 import 'EmergencyContacts.dart';
-import 'Favplace.dart';
+import 'FavPlace.dart';
 import 'Helpp.dart';
-import 'Navigate.dart';
+import 'MapScreen.dart';
 import 'Settings.dart';
 
 void main() {
@@ -58,7 +58,19 @@ class _MyAppState extends State<MyApp> {
             case 0:
               return apphome();
             case 1:
-
+              return MapScreen();
+            case 2:
+              return FavPlace();
+            case 3:
+              return EmergencyContacts();
+            case 4:
+              return ConnectedDevices();
+            case 5:
+              return Helpp();
+            case 6:
+              return AboutUs();
+            case 7:
+              return Settings();
             default:
               return Container();
           }
@@ -124,7 +136,7 @@ class Sidenav extends StatelessWidget {
           Divider(color: Colors.black),
           ListTile(
             title: Text(
-              'Help',
+              'Connected Devices',
               style: TextStyle(fontSize: 20),
             ),
             onTap: () {
@@ -135,7 +147,7 @@ class Sidenav extends StatelessWidget {
           Divider(color: Colors.black),
           ListTile(
             title: Text(
-              'About us',
+              'Help',
               style: TextStyle(fontSize: 20),
             ),
             onTap: () {
@@ -146,12 +158,23 @@ class Sidenav extends StatelessWidget {
           Divider(color: Colors.black),
           ListTile(
             title: Text(
-              'Settings',
+              'About us',
               style: TextStyle(fontSize: 20),
             ),
             onTap: () {
               Navigator.of(context).pop();
               onIndexChange(6);
+            },
+          ),
+          Divider(color: Colors.black),
+          ListTile(
+            title: Text(
+              'Settings',
+              style: TextStyle(fontSize: 20),
+            ),
+            onTap: () {
+              Navigator.of(context).pop();
+              onIndexChange(7);
             },
           ),
           Divider(color: Colors.black),
